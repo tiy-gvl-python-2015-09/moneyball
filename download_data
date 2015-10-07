@@ -1,0 +1,9 @@
+#!/bin/sh
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+mkdir -p $DIR/data
+curl -O http://seanlahman.com/files/database/lahman-csv_2015-01-24.zip $DIR
+
+mv $DIR/lahman-csv_2015-01-24.zip $DIR/data/
+cd $DIR/data
+unzip lahman-csv_2015-01-24.zip
